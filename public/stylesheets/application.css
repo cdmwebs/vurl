@@ -12,7 +12,7 @@ body {
 #header_container #logo_link {
   display: block;
   height: 152px;
-  width: 400px;
+  width: 710px;
 }
 #header_container a { color: #FFF; text-decoration: none;}
 #header_container.content {
@@ -23,25 +23,31 @@ body {
 #body_container {
   height: 650px;
 }
-
 #body_container #errorExplanation {
   margin:2em auto .5em auto;
 }
 
-#body_container div.flash {
-  margin:1em 0 0 0;
-  -moz-border-radius: 8px;
-  font-size: 140%;
-  font-weight: bold;
-  border:2px solid green;
-  padding: .25em 0;
+#infoBar {
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+#infoBar div {
+  padding:1em 0;
+  font-size:150%;
+  font-weight:bold;
+  margin:0 auto;
   text-align:center;
 }
 
-#body_container div.flash.notice {
-  background-color: #6DAF6D;
-  color: #fff; 
+.error, .notice, .success {
+  border:none;
+  padding:0;
 }
+
+.error {background:#CF8787;color:#990000;}
+.notice {background:#BEEACF;color:#264409;}
 
 #body_container form#new_vurl input#vurl_url {
   height: 58px;

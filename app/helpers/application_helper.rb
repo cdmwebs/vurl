@@ -6,11 +6,12 @@ module ApplicationHelper
   end
 
   def flasher
-    flashes = []
-    flash.each do |key, value|
-      flashes << content_tag(:div, value, :class => "flash #{key}")
+    return nil if flash.empty?
+    messages = ''
+    flash.each_pair do |key, message| 
+      messages += content_tag(:div, message, :class => key)
     end
-    flashes
+    content_tag(:div, messages, :id => 'infoBar')
   end
 
   # Thanks to mojombo for his clippy swf
