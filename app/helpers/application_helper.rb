@@ -5,6 +5,15 @@ module ApplicationHelper
     @vurl && !@vurl.title.blank? ?  @vurl.title : "Veez's URL shortener"
   end
 
+  def flasher
+    return nil if flash.empty?
+    messages = ''
+    flash.each_pair do |key, message| 
+      messages += content_tag(:div, message, :class => key)
+    end
+    content_tag(:div, messages, :id => 'infoBar')
+  end
+
   # Thanks to mojombo for his clippy swf
   # http://github.com/mojombo/clippy
   def clippy(text, bgcolor='#FFFFFF')
